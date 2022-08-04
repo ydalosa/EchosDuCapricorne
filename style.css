@@ -1,0 +1,113 @@
+*{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --black:#252525;
+    --yellow:#e9d20f;
+    --light-gray:#c2c2c2;
+    --white:#fff;
+}
+body{
+    line-height: 1.6;
+    display: grid;
+    grid-template-rows: 10em 50vh auto 10em;
+    grid-template-columns: 1fr minmax(30em, 5fr) minmax(15em, 2fr) 1fr;
+    grid-template-areas: 
+    "header header header header"
+    "hero hero hero hero"
+    " . main  sidebar . "
+    "footer footer footer footer"
+    ;
+    grid-column-gap:1.5em ;
+}
+ul{
+    display: flex;
+    width: 100%;
+    justify-content:space-between;
+}
+ul li{
+    list-style: none;
+    right: 100px;
+    padding: 10px;
+}
+ul li a{
+    color: #e9d20f;
+    text-decoration: none;
+    font-size:large;
+
+}
+header{
+    grid-area:header;
+}
+header,
+footer{
+    background:var(--black);
+    color: var(--yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header-title,
+footer-title{
+    font-size: 2.875rem;
+}
+.hero{
+    grid-area:hero;
+    position: relative;
+    background: url(headerEchosDuCapricorne.png);
+    /* background-repeat: no-repeat; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    object-fit: cover; 
+    width: 100%;
+}
+.hero-title{
+    margin: 0;
+}
+.hero-subtitle{
+    color:white;
+    font-size: 1.875rem;
+    padding: 0;
+}
+aside{
+    grid-area: sidebar;
+    background:#c2c2c2;
+    padding: 2em;
+}
+main{
+    grid-area:main;
+}
+footer{
+    grid-area:footer;
+}
+.card{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: min-content auto;
+    grid-template-areas: 
+    "img title"
+    "img content"
+    ;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+    padding: 1.5em;
+    grid-column-gap:1.5em ;
+    margin-bottom: 1.1em;
+}
+.card-img{
+    grid-area: img;
+    transition: 0.01s;
+}
+img:hover{
+    transform:scale(1.5);
+}
+.card-title{
+    margin: 0;
+    grid-area: title;
+    font-weight: 300;
+}
+.card-content{
+       grid-area: content;
+}
+.card-content a{
+    color:#e9d20f;
+    font-size: 1.1em;
+}
